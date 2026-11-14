@@ -1,0 +1,58 @@
+{
+  "geometry": {
+    "length_m": 68.0,
+    "width_m": 14.0,
+    "finish_x_m": 64.0,
+    "start_x_m": 5.0,
+    "start_y_m": [6.5, 7.5],
+    "start_heading_deg": 0.0
+  },
+  "training_courses": [
+    {"id": "train_a", "obstacles_m": [[22, 0, 25, 7.5], [41, 6.5, 44, 14]]},
+    {"id": "train_b", "obstacles_m": [[20, 6.5, 23, 14], [43, 0, 46, 7.5]]}
+  ],
+  "test_courses": [
+    {"id": "test_a", "obstacles_m": [[19, 0, 22, 7.8], [40, 6.0, 43, 14]]},
+    {"id": "test_b", "obstacles_m": [[24, 0, 27, 8.4], [40, 5.7, 43, 14]]},
+    {"id": "test_c", "obstacles_m": [[17, 0, 20, 7.5], [33, 6.2, 36, 14], [50, 0, 53, 7.9]]}
+  ],
+  "mirror_test_courses": true,
+  "vehicle": {
+    "wheelbase_m": 2.6,
+    "length_m": 4.3,
+    "width_m": 1.7,
+    "speed_mps": 4.0,
+    "dt_s": 0.1,
+    "steering_limit_deg": 35.0,
+    "max_ticks": 220
+  },
+  "sensor": {
+    "field_of_view_deg": 180.0,
+    "range_m": 25.0,
+    "input_count": 25,
+    "test_noise_std": [0.0, 0.05, 0.10],
+    "noisy_repeats": 3,
+    "noise_seed": 6200
+  },
+  "ga": {
+    "population": 200,
+    "populations_evaluated": 40,
+    "tournament_size": 10,
+    "mutation_probability_per_gene": 0.10,
+    "weight_min": -1.0,
+    "weight_max": 1.0,
+    "crossover_probability": 1.0,
+    "crossover_fraction_mean": 0.95,
+    "crossover_fraction_std": 0.05,
+    "seeds": [5100, 5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111]
+  },
+  "conditions": [
+    {"id": "free", "symmetric": false, "hidden": 15, "physical_beams": 25, "elites": 0},
+    {"id": "symmetric", "symmetric": true, "hidden": 15, "physical_beams": 25, "elites": 0},
+    {"id": "free_small", "symmetric": false, "hidden": 8, "physical_beams": 25, "elites": 0},
+    {"id": "free_low_resolution", "symmetric": false, "hidden": 15, "physical_beams": 7, "elites": 0},
+    {"id": "symmetric_low_resolution", "symmetric": true, "hidden": 15, "physical_beams": 7, "elites": 0},
+    {"id": "free_elitism", "symmetric": false, "hidden": 15, "physical_beams": 25, "elites": 10},
+    {"id": "symmetric_elitism", "symmetric": true, "hidden": 15, "physical_beams": 25, "elites": 10}
+  ]
+}
